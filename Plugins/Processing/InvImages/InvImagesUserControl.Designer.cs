@@ -1,0 +1,145 @@
+﻿namespace InvImages
+{
+    partial class InvImagesUserControl
+    {
+        /// <summary> 
+        /// Требуется переменная конструктора.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Освободить все используемые ресурсы.
+        /// </summary>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Код, автоматически созданный конструктором компонентов
+
+        /// <summary> 
+        /// Обязательный метод для поддержки конструктора - не изменяйте 
+        /// содержимое данного метода при помощи редактора кода.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.frameComboBox1 = new CustomEditor.FrameComboBox();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.seriesView1 = new DIPStudioUICore.SeriesView();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frameComboBox1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.seriesView1);
+            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.frameComboBox1);
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem3,
+            this.layoutControlItem2});
+            // 
+            // frameComboBox1
+            // 
+            this.frameComboBox1.Location = new System.Drawing.Point(126, 12);
+            this.frameComboBox1.Name = "frameComboBox1";
+            this.frameComboBox1.Properties.Application = null;
+            this.frameComboBox1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.frameComboBox1.Size = new System.Drawing.Size(434, 20);
+            this.frameComboBox1.StyleController = this.layoutControl1;
+            this.frameComboBox1.TabIndex = 4;
+            this.frameComboBox1.SelectedValueChanged += new System.EventHandler(this.frameComboBox1_SelectedValueChanged);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.frameComboBox1;
+            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(552, 24);
+            this.layoutControlItem1.Text = "layoutControlItem1";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(110, 13);
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(126, 337);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(434, 20);
+            this.textEdit1.StyleController = this.layoutControl1;
+            this.textEdit1.TabIndex = 6;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.textEdit1;
+            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 325);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(552, 24);
+            this.layoutControlItem3.Text = "layoutControlItem3";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(110, 13);
+            // 
+            // seriesView1
+            // 
+            this.seriesView1.Location = new System.Drawing.Point(12, 52);
+            this.seriesView1.Name = "seriesView1";
+            this.seriesView1.Number = 0;
+            this.seriesView1.Size = new System.Drawing.Size(548, 281);
+            this.seriesView1.TabIndex = 7;
+            this.seriesView1.UpdateControl += frameComboBox1_SelectedValueChanged;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.seriesView1;
+            this.layoutControlItem2.CustomizationFormText = "Результат обработки";
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(552, 301);
+            this.layoutControlItem2.Text = "Результат обработки";
+            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(110, 13);
+            // 
+            // InvImagesUserControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Name = "InvImagesUserControl";
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frameComboBox1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private CustomEditor.FrameComboBox frameComboBox1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DIPStudioUICore.SeriesView seriesView1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+    }
+}

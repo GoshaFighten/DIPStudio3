@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC277B5D-1F50-451D-A231-F9223F65DF04}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DIPStudioUICore</RootNamespace>
+    <AssemblyName>DIPStudioUICore</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DIPKeyToken.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v13.2">
+      <HintPath>..\DLLs\DevExpress.Data.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v13.2">
+      <HintPath>..\DLLs\DevExpress.Images.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.2.Core">
+      <HintPath>..\DLLs\DevExpress.Printing.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v13.2.Core">
+      <HintPath>..\DLLs\DevExpress.Sparkline.v13.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.2">
+      <HintPath>..\DLLs\DevExpress.Utils.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v13.2">
+      <HintPath>..\DLLs\DevExpress.XtraBars.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.2">
+      <HintPath>..\DLLs\DevExpress.XtraEditors.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v13.2">
+      <HintPath>..\DLLs\DevExpress.XtraGrid.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v13.2">
+      <HintPath>..\DLLs\DevExpress.XtraLayout.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v13.2">
+      <HintPath>..\DLLs\DevExpress.XtraPrinting.v13.2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BasePluginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BasePluginForm.Designer.cs">
+      <DependentUpon>BasePluginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BasePluginUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BasePluginUserControl.Designer.cs">
+      <DependentUpon>BasePluginUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseUserControl.Designer.cs">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FieldComboBox\FieldComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FieldComboBox\RepositoryItemFieldComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Plugin.cs" />
+    <Compile Include="SeriesView\SeriesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SeriesView\SeriesView.Designer.cs">
+      <DependentUpon>SeriesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableComboBox\TableComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TableComboBox\RepositoryItemTableComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DIPMessageBox.cs" />
+    <Compile Include="Extensions\EditorExtensions.cs" />
+    <Compile Include="Extensions\GridExtensions.cs" />
+    <Compile Include="FrameComboBox\FrameComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrameComboBox\RepositoryItemFrameComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ValidatedPluginSettings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasePluginForm.resx">
+      <DependentUpon>BasePluginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BasePluginUserControl.resx">
+      <DependentUpon>BasePluginUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeriesView\SeriesView.resx">
+      <DependentUpon>SeriesView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DIPStudioCore\DIPStudioCore.csproj">
+      <Project>{CD10CF16-190B-4793-90FB-A4DA035E3907}</Project>
+      <Name>DIPStudioCore</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DIPKeyToken.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
