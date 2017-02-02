@@ -17,8 +17,6 @@ namespace DIPStudio3 {
     public partial class MainForm : BaseForm {
         private string[] fInputArgs;
 
-        private const string defaultLayoutPath = "DefaultLayout.xml";
-
         private static string DIPStudioFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\DIPStudio3";
 
         private string layoutPath = DIPStudioFolder + "\\DockingLayout.xml";
@@ -324,7 +322,13 @@ namespace DIPStudio3 {
             if(File.Exists(layoutPath))
                 dockManager1.RestoreLayoutFromXml(layoutPath);
             else
-                dockManager1.RestoreLayoutFromXml(defaultLayoutPath);
+                RestoreDefaultPanelLayout();
+        }
+
+        private void RestoreDefaultPanelLayout() {
+            using (Stream s = GenerateStreamFromString(DIPStudio3.Properties.Resources.DefaultLayout)) {
+                dockManager1.RestoreLayoutFromStream(s);
+            }            
         }
 
         private void btnSaveProject_ItemClick(object sender, ItemClickEventArgs e) {
@@ -338,7 +342,7 @@ namespace DIPStudio3 {
         }
 
         private void bbiDefaultLayout_ItemClick(object sender, ItemClickEventArgs e) {
-            dockManager1.RestoreLayoutFromXml(defaultLayoutPath);
+            RestoreDefaultPanelLayout();
         }
 
         private void btnRights_ItemClick(object sender, ItemClickEventArgs e) {
@@ -390,6 +394,15 @@ namespace DIPStudio3 {
                 for (int i = 0; i < setNumber.DialogValue; i++) {
                     RunProject(true);
                 }
+        }
+
+        public Stream GenerateStreamFromString(string s) {
+            MemoryStream stream = new MemoryStream();
+            StreamWriter writer = new StreamWriter(stream);
+            writer.Write(s);
+            writer.Flush();
+            stream.Position = 0;
+            return stream;
         }
     }
 }
