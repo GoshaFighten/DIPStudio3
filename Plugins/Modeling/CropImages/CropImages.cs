@@ -22,7 +22,7 @@ namespace CropImages
         /// <param name="index">Номер текущего цикла</param>
         protected override void Run(int t, int index, int tFinish)
         {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series inputSeries = application.GetSeriesByName( PluginSettings.InputSeries);
             if (inputSeries == null)
             {

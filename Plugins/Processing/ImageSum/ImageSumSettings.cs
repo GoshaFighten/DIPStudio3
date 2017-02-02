@@ -45,7 +45,7 @@ namespace ImageSum {
                 default:
                     return;
             }
-            if (DIPApplication.GetInstance().GetSeriesByName(Plugin.ShortName + inputSeries) == null) {
+            if (DIPApplicationBase.GetInstance().GetSeriesByName(Plugin.ShortName + inputSeries) == null) {
                 info.ErrorText = string.Format("Input series \"{0}\" does not exist", inputSeries);
             }
         }

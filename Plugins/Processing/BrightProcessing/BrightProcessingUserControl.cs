@@ -17,7 +17,7 @@ namespace BrightProcessing
             : base(settings) 
         {
             InitializeComponent();
-            frameComboBox1.Properties.Application = DIPApplication.GetInstance();
+            frameComboBox1.Properties.Application = DIPApplicationBase.GetInstance();
             BindToControl(settings, s => s.InputSeries, frameComboBox1, c => c.EditValue);
             BindToControl(settings, s => s.X1, seX1, c => c.EditValue);
             BindToControl(settings, s => s.Y1, seY1, c => c.EditValue);
@@ -35,7 +35,7 @@ namespace BrightProcessing
         private void Draw()
         {
             BrightProcessingSettings settings = (BrightProcessingSettings)Settings;
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series inputSeries = application.GetSeriesByName( settings.InputSeries);
 
             Bitmap bmp = new Bitmap(peGraf.Width, peGraf.Height, System.Drawing.Imaging.PixelFormat.Format16bppRgb555);

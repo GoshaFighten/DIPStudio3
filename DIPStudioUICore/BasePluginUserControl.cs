@@ -15,12 +15,12 @@ namespace DIPStudioUICore {
     public partial class BasePluginUserControl : BaseUserControl {
         protected readonly ValidatedPluginSettings fSettings;
 
-        protected readonly DIPApplication fApplication;
+        protected readonly DIPApplicationBase fApplication;
 
 
 
         public BasePluginUserControl() {
-            fApplication = DIPApplication.GetInstance();
+            fApplication = DIPApplicationBase.GetInstance();
             InitializeComponent();
         }
 
@@ -77,7 +77,7 @@ namespace DIPStudioUICore {
         private static bool GetReadOnly<TObj, TResult>(TObj obj, System.Linq.Expressions.Expression<Func<TObj, TResult>> selector) {
             System.Linq.Expressions.MemberExpression mExpression = (System.Linq.Expressions.MemberExpression)selector.Body;
             UserAccessAttribute[] attrs = (UserAccessAttribute[])mExpression.Member.GetCustomAttributes(typeof(DisplayNameAttribute), true);
-            return DIPApplication.GetInstance().Rights == Rights.User && attrs.Length == 0;
+            return DIPApplicationBase.GetInstance().Rights == Rights.User && attrs.Length == 0;
         }
 
         //protected void BindValueObject<TSettings, TResult>(TSettings settings, System.Linq.Expressions.Expression<Func<TSettings, TResult>> selector, EmptySpaceItem placeHolder, PropertyChangedEventHandler objectChangedCallback)
@@ -122,7 +122,7 @@ namespace DIPStudioUICore {
         //    item = new LayoutControlItem();
         //    item.Name = Guid.NewGuid().ToString();
         //    TableComboBox txtData = new TableComboBox();
-        //    txtData.Properties.Application = DIPApplication.GetInstance();
+        //    txtData.Properties.Application = DIPApplicationBase.GetInstance();
         //    txtData.Name = Guid.NewGuid().ToString();
         //    Bind(vo, s => s.Data, txtData, c => c.EditValue);
         //    txtData.Enabled = false;
@@ -133,7 +133,7 @@ namespace DIPStudioUICore {
         //    item = new LayoutControlItem();
         //    item.Name = Guid.NewGuid().ToString();
         //    FieldComboBox txtField = new FieldComboBox();
-        //    txtField.Properties.Application = DIPApplication.GetInstance();
+        //    txtField.Properties.Application = DIPApplicationBase.GetInstance();
         //    txtData.SelectedIndexChanged += (s, e) => {
         //        TableComboBox cmb = (TableComboBox)s;
         //        txtField.Properties.TableName = (string)cmb.EditValue;
@@ -198,7 +198,7 @@ namespace DIPStudioUICore {
             item = new LayoutControlItem();
             item.Name = Guid.NewGuid().ToString();
             TableComboBox txtData = new TableComboBox();
-            txtData.Properties.Application = DIPApplication.GetInstance();
+            txtData.Properties.Application = DIPApplicationBase.GetInstance();
             txtData.Name = Guid.NewGuid().ToString();
             Bind(vo, s => s.Data, txtData, c => c.EditValue);
             txtData.Enabled = false;
@@ -209,7 +209,7 @@ namespace DIPStudioUICore {
             item = new LayoutControlItem();
             item.Name = Guid.NewGuid().ToString();
             FieldComboBox txtField = new FieldComboBox();
-            txtField.Properties.Application = DIPApplication.GetInstance();
+            txtField.Properties.Application = DIPApplicationBase.GetInstance();
             txtData.SelectedIndexChanged += (s, e) => {
                 TableComboBox cmb = (TableComboBox)s;
                 txtField.Properties.TableName = (string)cmb.EditValue;

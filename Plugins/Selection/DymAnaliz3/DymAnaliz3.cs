@@ -35,7 +35,7 @@ namespace DymAnaliz3
         protected override void Run(int t, int index, int tFinish)
         {
 
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series inputSeries = application.GetSeriesByName(this.PluginSettings.InputSeries);
             if (this.PluginSettings.newSeries) {
                 AddSeries(t, inputSeries);
@@ -60,7 +60,7 @@ namespace DymAnaliz3
 
         private void AddSeries(int t, Series inputSeries)
         {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series series = application.GetSeriesByNameOrCreateNew(ShortName + PluginSettings.ResultName);
             Frame resultFrame = new Frame(t, DrawStrob(inputSeries[t], PluginSettings));
             resultFrame.Name = inputSeries[t].Name;

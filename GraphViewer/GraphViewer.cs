@@ -21,8 +21,8 @@ namespace GraphViewer
             InitializeComponent();
             _graphStory = source;
             itemBindingSource.DataSource = GraphStory.Curvas;
-            this.repositoryItemTableComboBox1.Application = DIPApplication.GetInstance();
-            this.repositoryItemFieldComboBox1.Application = DIPApplication.GetInstance();
+            this.repositoryItemTableComboBox1.Application = DIPApplicationBase.GetInstance();
+            this.repositoryItemFieldComboBox1.Application = DIPApplicationBase.GetInstance();
             this.teTitle.DataBindings.Add(new Binding("Text", GraphStory, "Title"));
             this.teOxName.DataBindings.Add(new Binding("Text", GraphStory, "OX"));
             this.teOyName.DataBindings.Add(new Binding("Text", GraphStory, "OY"));
@@ -120,7 +120,7 @@ namespace GraphViewer
 
         private void AssignPointFromTable(Curva line)
         {
-            DIPApplication app = DIPApplication.GetInstance();
+            DIPApplicationBase app = DIPApplicationBase.GetInstance();
             Table table = app.GetTableByName(line.SourceTable);
             if (table == null ||  string.IsNullOrEmpty(line.SourceField))
                 return;

@@ -17,7 +17,7 @@ namespace DilateImages
             :base(settings)
         {
             InitializeComponent();
-            frameComboBox1.Properties.Application = DIPApplication.GetInstance();
+            frameComboBox1.Properties.Application = DIPApplicationBase.GetInstance();
             BindValueObject(settings, s => s.Order, emptySpaceItem1, frameComboBox1_SelectedValueChanged);
             BindToControl(settings, s => s.InputSeries, frameComboBox1, c => c.EditValue);
             BindToControl(settings, s => s.ResultName, textEdit1, c => c.EditValue, settings.Plugin.ShortName);
@@ -26,7 +26,7 @@ namespace DilateImages
         private void frameComboBox1_SelectedValueChanged(object sender, EventArgs e)
         {            
             DilateImagesSettings settings = (DilateImagesSettings)Settings;
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series inputSeries = application.GetSeriesByName( settings.InputSeries);
             if (inputSeries != null && inputSeries.Count != 0)
             {

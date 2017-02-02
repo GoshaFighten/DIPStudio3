@@ -31,7 +31,7 @@ namespace DymAnalizCalculation
         }
         protected override void Run(int t, int index, int tFinish)
         {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Table table = application.GetTableByNameOrCreateNew(ShortName + PluginSettings.ResultData, string.Empty);
             DataFrame frame = new DataFrame(t);
             frame.Name = t.ToString();
@@ -67,7 +67,7 @@ namespace DymAnalizCalculation
 
         private double GetDataByTableName(string tableName, string fieldName, int t)
         {
-            DIPApplication app = DIPApplication.GetInstance();
+            DIPApplicationBase app = DIPApplicationBase.GetInstance();
             Table inputTable = app.GetTableByName(tableName);
             if (inputTable == null)
                 throw new PluginException(string.Format("Table {0} does not exist", tableName));

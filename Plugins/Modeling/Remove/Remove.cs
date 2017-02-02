@@ -18,7 +18,7 @@ namespace Remove
             if (t == tFinish)
             {
                 RemoveSettings settings = this.PluginSettings;
-                DIPApplication application = DIPApplication.GetInstance();
+                DIPApplicationBase application = DIPApplicationBase.GetInstance();
                 if (settings.InputSeries != String.Empty)
                 {
                     Series inputSeries = application.GetSeriesByName( settings.InputSeries);

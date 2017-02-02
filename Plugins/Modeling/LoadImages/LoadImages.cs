@@ -25,7 +25,7 @@ namespace LoadImages {
             if (!Directory.Exists(PluginSettings.FolderName)) {
                 throw new PluginException(string.Format("Folder \"{0}\" does not exist", PluginSettings.FolderName));
             }
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series series = application.GetSeriesByNameOrCreateNew(ShortName + PluginSettings.ResultName );
             application.AddSeries(series);
             if (t < PluginSettings.StartTime) {
@@ -69,7 +69,7 @@ namespace LoadImages {
             if (!Directory.Exists(PluginSettings.FolderName)) {
                 throw new PluginException(string.Format("Folder \"{0}\" does not exist", PluginSettings.FolderName));
             }
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series series = application.GetSeriesByNameOrCreateNew(ShortName + PluginSettings.ResultName );
             application.AddSeries(series);
             //if (t < PluginSettings.StartTime) {

@@ -29,7 +29,7 @@ namespace InvImages {
         /// <param name="t">Текущее время выполнения</param>
         /// <param name="index">Номер текущего цикла</param>
         protected override void Run(int t, int index, int tFinish) {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series inputSeries = application.GetSeriesByName(PluginSettings.InputSeries);
             if (inputSeries == null) {
                 throw new PluginException(string.Format("Series {0} does not exist", PluginSettings.InputSeries));

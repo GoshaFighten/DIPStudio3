@@ -78,7 +78,7 @@ namespace DIPStudioCore {
             if (!UseField || Data == ""|| Field == "") {
                 return Constant;
             }
-            Table table = DIPApplication.GetInstance().GetTableByName(Data);            
+            Table table = DIPApplicationBase.GetInstance().GetTableByName(Data);            
             DataFrame frame = table[t];
             double time0 = frame.Time;
             double x0 = Convert.ToDouble(((IObjectWithProperties)frame).Properties[Field]);

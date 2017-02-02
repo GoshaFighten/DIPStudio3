@@ -19,14 +19,14 @@ namespace DymAnalizCalculation
         public SetSynxTimeUserControl()
         {
             InitializeComponent();
-            DIPApplication app = DIPApplication.GetInstance();
+            DIPApplicationBase app = DIPApplicationBase.GetInstance();
             cmbInputImg.Properties.Application = app;
             cmbDataInput.Properties.Application = app;
         }
 
         private void cmbInputImg_SelectedValueChanged(object sender, EventArgs e)
-        {            
-            DIPApplication app = DIPApplication.GetInstance();
+        {
+            DIPApplicationBase app = DIPApplicationBase.GetInstance();
             Series series = app.GetSeriesByName(cmbInputImg.Text);
             Draw(series);
             seFrameChoose.Properties.MaxValue = series.Count;
@@ -72,7 +72,7 @@ namespace DymAnalizCalculation
 
         private void fieldComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DIPApplication app = DIPApplication.GetInstance();
+            DIPApplicationBase app = DIPApplicationBase.GetInstance();
             Table table = app.GetTableByName(cmbDataInput.Text);
             foreach (var item in table) {
                 listBoxControl1.Items.Add(item.Objects[0].Properties[fieldComboBox1.SelectedItem.ToString()]);

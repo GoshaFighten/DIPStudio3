@@ -49,10 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application.cs" />
+    <Compile Include="DIPApplication.cs" />
     <Compile Include="Base\SortedBindingList.cs" />
     <Compile Include="Base\FrameElement.cs" />
     <Compile Include="Converter.cs" />
+    <Compile Include="DIPApplicationBase.cs" />
     <Compile Include="ValueObject.cs" />
     <Compile Include="NaturalComparer.cs" />
     <Compile Include="Data\DataFrame.cs" />

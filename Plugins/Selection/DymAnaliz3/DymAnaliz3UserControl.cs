@@ -18,7 +18,7 @@ namespace DymAnaliz3
         public DymAnaliz3UserControl(DymAnaliz3Settings settings)
             : base(settings) {
             InitializeComponent();
-            frameComboBox1.Properties.Application = DIPApplication.GetInstance();
+            frameComboBox1.Properties.Application = DIPApplicationBase.GetInstance();
             BindToControl(settings, s => s.InputSeries, frameComboBox1, c => c.EditValue);
             BindToControl(settings, s => s.ResultName, textEdit1, c => c.EditValue, settings.Plugin.ShortName);
             BindToControl(settings, s => s.ResultData, textEdit2, c => c.EditValue, settings.Plugin.ShortName);

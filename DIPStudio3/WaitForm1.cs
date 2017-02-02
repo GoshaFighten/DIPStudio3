@@ -51,7 +51,6 @@ namespace DIPStudio3 {
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            DIPStudioCore.DIPApplication.GetInstance().CalculationStop = true;
         }
     }
 }

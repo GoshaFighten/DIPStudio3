@@ -23,7 +23,7 @@ namespace SelectObjs {
 
         private void cmbInput_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DIPApplication app = DIPApplication.GetInstance();
+            DIPApplicationBase app = DIPApplicationBase.GetInstance();
             Series inputSeries = app.GetSeriesByName( frameComboBox1.Text);
             if (inputSeries != null && inputSeries.Count != 0)
                 Draw(inputSeries);

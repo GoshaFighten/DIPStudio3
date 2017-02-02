@@ -23,7 +23,7 @@ namespace CustomEditor {
         }
 
         //The unique name for the custom editor
-        private DIPApplication fApplication;
+        private DIPApplicationBase fApplication;
 
         public const string CustomEditName = "FrameComboBox";
 
@@ -60,7 +60,7 @@ namespace CustomEditor {
             }
         }
 
-        public DIPApplication Application {
+        public DIPApplicationBase Application {
             get { return fApplication; }
             set {
                 if(fApplication == value)

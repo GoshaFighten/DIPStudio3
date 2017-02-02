@@ -15,7 +15,7 @@ namespace ShowObjects {
         }
         protected override void Run(int t, int index, int tFinish)
         {
-            DIPApplication app = DIPApplication.GetInstance();
+            DIPApplicationBase app = DIPApplicationBase.GetInstance();
             Series inputSeries = app.GetSeriesByName( this.PluginSettings.InputImages);
             if (inputSeries == null) {
                 throw new PluginException(string.Format("Series {0} does not exist", this.PluginSettings.InputImages));

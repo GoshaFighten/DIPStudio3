@@ -25,7 +25,7 @@ namespace BinImages {
             Logic(t);
         }
         private void Logic(int t) {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series inputSeries = application.GetSeriesByName(this.PluginSettings.InputSeries);
             if (inputSeries == null) {
                 throw new PluginException(string.Format("Series {0} does not exist", this.PluginSettings.InputSeries));

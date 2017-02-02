@@ -40,7 +40,7 @@ namespace SelectObjs {
         protected override void GetPropertyError(string propertyName, DevExpress.XtraEditors.DXErrorProvider.ErrorInfo info) {
             base.GetPropertyError(propertyName, info);
             if(propertyName == "InputSeries") {
-                if(DIPApplication.GetInstance().GetSeriesByName(InputSeries) == null) {
+                if(DIPApplicationBase.GetInstance().GetSeriesByName(InputSeries) == null) {
                     info.ErrorText = "Input series does not exist!";
                 }
             }

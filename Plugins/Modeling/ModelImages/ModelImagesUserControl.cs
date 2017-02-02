@@ -17,7 +17,7 @@ namespace ModelImages
             : base(settings)
         {
             InitializeComponent();
-            frameComboBox1.Properties.Application = DIPApplication.GetInstance();
+            frameComboBox1.Properties.Application = DIPApplicationBase.GetInstance();
             BindToControl(settings, s => s.Width, seWidth, c => c.EditValue);
             BindToControl(settings, s => s.Height, seHeight, c => c.EditValue);
             BindToControl(settings, s => s.BARnd, seBARnd, c => c.EditValue);

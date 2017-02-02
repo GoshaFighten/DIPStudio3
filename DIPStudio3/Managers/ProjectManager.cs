@@ -74,7 +74,6 @@ namespace DIPStudio3 {
 
         private void ShowWaitForm() {
             DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(application.MainForm, typeof(WaitForm1), true, true);
-            application.CalculationStop = false;
         }
 
         private static void CloseWaitForm() {
@@ -114,7 +113,7 @@ namespace DIPStudio3 {
             ShowWaitForm();
             if(previousStep != null)
                 ReportProgress(previousStep.Progress);
-            while(currentStep != null && !application.CalculationStop) {
+            while(currentStep != null) {
                 try {
                     currentStep.DoStep(StartTime, Discretization);
                     ReportProgress(currentStep.Progress);

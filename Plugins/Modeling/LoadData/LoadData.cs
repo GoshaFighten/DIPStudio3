@@ -19,7 +19,7 @@ namespace LoadData {
             if (index != 0) {
                 return;
             }
-            Table table = DIPApplication.GetInstance().GetTableByNameOrCreateNew(ShortName + PluginSettings.ResultName, string.Empty);
+            Table table = DIPApplicationBase.GetInstance().GetTableByNameOrCreateNew(ShortName + PluginSettings.ResultName, string.Empty);
             if (!File.Exists(PluginSettings.FileName)) {
                 throw new PluginException(string.Format("{0} файл не существует!", PluginSettings.FileName));
             }
@@ -61,7 +61,7 @@ namespace LoadData {
                     table.Add(frame);
                 }
             }
-            DIPApplication.GetInstance().AddTable(table);
+            DIPApplicationBase.GetInstance().AddTable(table);
         }
 
         protected override void Run(int t, int index, int tFinish)

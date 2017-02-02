@@ -25,7 +25,7 @@ namespace RGB2Gray {
 
         protected override void Run(int t, int index, int tFinish)
         {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series inputSeries = application.GetSeriesByName( this.PluginSettings.InputSeries);
             if (inputSeries == null) {
                 throw new PluginException(string.Format("Series {0} does not exist", this.PluginSettings.InputSeries));

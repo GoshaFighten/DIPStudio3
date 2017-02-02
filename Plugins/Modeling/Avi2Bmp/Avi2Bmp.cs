@@ -32,7 +32,7 @@ namespace Avi2Bmp {
                 return;
             bool saveToDisk = settings.InputSeries != String.Empty;
 
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             AviManager aviManager = new AviManager(settings.InputSeries, true);
 
             VideoStream stream = aviManager.GetVideoStream();

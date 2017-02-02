@@ -17,8 +17,8 @@ namespace Remove
             :base(settings)
         {
             InitializeComponent();
-            frameComboBox1.Properties.Application = DIPApplication.GetInstance();
-            tableComboBox1.Properties.Application = DIPApplication.GetInstance();
+            frameComboBox1.Properties.Application = DIPApplicationBase.GetInstance();
+            tableComboBox1.Properties.Application = DIPApplicationBase.GetInstance();
 
             BindToControl(settings, s => s.InputSeries, frameComboBox1, c => c.EditValue);
             BindToControl(settings, s => s.InputTable, tableComboBox1, c => c.EditValue);

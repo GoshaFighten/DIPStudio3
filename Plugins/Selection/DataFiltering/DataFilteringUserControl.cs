@@ -60,7 +60,7 @@ namespace DataFiltering {
         }
         private void FillSourceListBox()
         {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             DataFilteringSettings settings = (DataFilteringSettings)this.Settings;
             Table dataSource = application.GetTableByName(((DataFilteringSettings)this.Settings).InputTable);
             if (dataSource == null || dataSource.Count == 0) {

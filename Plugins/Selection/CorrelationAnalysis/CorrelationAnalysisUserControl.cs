@@ -14,7 +14,7 @@ namespace CorrelationAnalysis {
         public CorrelationAnalysisUserControl(CorrelationAnalysisSettings settings)
             : base(settings) {
             InitializeComponent();
-            frameComboBox1.Properties.Application = DIPApplication.GetInstance();
+            frameComboBox1.Properties.Application = DIPApplicationBase.GetInstance();
             BindToControl(settings, s => s.InputSeries, frameComboBox1, c => c.EditValue);
             BindToControl(settings, s => s.NcsY, seX, c => c.EditValue);
             BindToControl(settings, s => s.NcsX, seY, c => c.EditValue);

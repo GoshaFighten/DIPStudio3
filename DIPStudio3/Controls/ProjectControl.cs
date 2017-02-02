@@ -20,10 +20,11 @@ namespace DIPStudio3.Controls {
         const string strColStatus = "Статус выполнения";
         const string strColTimeElapsed = "Время выполнения";
         const string strColCurrentTime = "Текущий шаг";
-
+        DIPApplication fApplication;
 
         public ProjectControl(DIPApplication application) {
             InitializeComponent();
+            this.fApplication = application;
             colCaption.Caption = strColCaption;
             colStatus.Caption = strColStatus;
             colTimeElapsed.Caption = strColTimeElapsed;
@@ -189,8 +190,7 @@ namespace DIPStudio3.Controls {
 
         private void deleteItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DIPApplication application = DIPApplication.GetInstance();
-            application.RemoveOperation(GetActiveOperation());
+            fApplication.RemoveOperation(GetActiveOperation());
             ProjectManager.IsModified = true;
             this.Invalidate();
         }
@@ -212,18 +212,16 @@ namespace DIPStudio3.Controls {
 
         private void pasteOperationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DIPApplication application = DIPApplication.GetInstance();
             if (exchangeBuffer != null) {
-                application.AddPluginToProject(application.GetPluginByKey(exchangeBuffer.Plugin.Key));
+                fApplication.AddPluginToProject(fApplication.GetPluginByKey(exchangeBuffer.Plugin.Key));
                 ProjectManager.IsModified = true;
             }
         }
 
         private void cutOperationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DIPApplication application = DIPApplication.GetInstance();
             exchangeBuffer = GetActiveOperation();
-            application.RemoveOperation(exchangeBuffer.Clone());
+            fApplication.RemoveOperation(exchangeBuffer.Clone());
         }
         Operation GetActiveOperation()
         {

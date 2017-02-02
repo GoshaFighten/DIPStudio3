@@ -25,7 +25,7 @@ namespace SizeFiltering {
         }
         internal const string STR_S = "S";
         private void Logic(int t, int index) {
-            DIPApplication app = DIPApplication.GetInstance();
+            DIPApplicationBase app = DIPApplicationBase.GetInstance();
             Table inputTable = app.GetTableByName(this.PluginSettings.InputTable);
             if (inputTable == null) {
                 throw new PluginException(string.Format("Table {0} does not exist", PluginSettings.InputTable));

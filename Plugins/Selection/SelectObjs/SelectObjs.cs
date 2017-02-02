@@ -22,7 +22,7 @@ namespace SelectObjs {
 
         private void AddSeries(int t, Series inputSeries)
         {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series series = application.GetSeriesByNameOrCreateNew(ShortName + PluginSettings.ResultName);
             Frame resultFrame = ImageMath.GetProcess(inputSeries[t], BinLogic, 1, t);
             series.Add(resultFrame);
@@ -39,7 +39,7 @@ namespace SelectObjs {
         }
 
         private void Logic(int t) {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Series inputSeries = application.GetSeriesByName( this.PluginSettings.InputSeries);
             if (inputSeries == null) {
                 throw new PluginException(string.Format("Series {0} does not exist", this.PluginSettings.InputSeries));

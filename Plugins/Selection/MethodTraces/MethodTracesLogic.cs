@@ -14,7 +14,7 @@ namespace MethodTraces {
         }
         const string tracePrefix = "Trace ";
         public void Run(int t, int index, MethodTracesSettings settings) {
-            DIPApplication app = DIPApplication.GetInstance();
+            DIPApplicationBase app = DIPApplicationBase.GetInstance();
             Table inputTable = app.GetTableByName(settings.InputTable);
             if (inputTable == null) {
                 throw new PluginException(string.Format("Table {0} does not exist", settings.InputTable));

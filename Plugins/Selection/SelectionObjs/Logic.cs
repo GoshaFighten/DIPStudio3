@@ -17,7 +17,7 @@ namespace SelectionObjects {
             fSettings = settings;
         }
         public void Run() {
-            DIPApplication app = DIPApplication.GetInstance();
+            DIPApplicationBase app = DIPApplicationBase.GetInstance();
             Table inputTable = app.GetTableByName(fSettings.InputTable);
             if (inputTable == null) {
                 throw new PluginException(string.Format("Table {0} does not exist", fSettings.InputTable));

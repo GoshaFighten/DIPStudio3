@@ -25,7 +25,7 @@ namespace CustomEditor {
 
         //The unique name for the custom editor
         private string fTableName;
-        private DIPApplication fApplication;
+        private DIPApplicationBase fApplication;
 
         public const string CustomEditName = "FieldComboBox";
 
@@ -62,7 +62,7 @@ namespace CustomEditor {
             }
         }
 
-        public DIPApplication Application {
+        public DIPApplicationBase Application {
             get { return fApplication; }
             set {
                 if (fApplication == value)

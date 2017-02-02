@@ -8,29 +8,25 @@ using System.Windows.Forms;
 using DIPStudioCore.Data;
 
 namespace DIPStudioCore {
-    public class DIPApplication {
+    public class DIPApplication : DIPApplicationBase {
 
         private DIPApplication() {
             project = new BindingList<Operation>();
             series = new BindingList<Series>();
             tables = new BindingList<Table>();
         }
-        public bool CalculationStop;
 
-        private static DIPApplication instance;
-        public static DIPApplication  GetInstance() {
-            if (instance == null) {
-                instance = new DIPApplication();
-            }
+        public static DIPApplication CreateDIPApplication() {
+            DIPApplication instance = new DIPApplication();
+            SetInstance(instance);
             return instance;
         }
 
         public void AddPluginToProject(IPlugin plugin) {
-               AddPluginToProject(plugin, project.Count);
+            AddPluginToProject(plugin, project.Count);
         }
 
-        public void AddPluginToProject(IPlugin plugin, int index)
-        {
+        public void AddPluginToProject(IPlugin plugin, int index) {
             Operation operation = new Operation();
             operation.Plugin = plugin;
             operation.Status = OperationStatus.NotExecuted;
@@ -69,39 +65,36 @@ namespace DIPStudioCore {
             get { return tables; }
         }
 
-        public void AddSeries(Series series) {
+        public override void AddSeries(Series series) {
             Series existingSeries = GetSeriesByName(series.Name);
             if (existingSeries == null) {
                 this.Series.Add(series);
             }
         }
 
-        public void AddTable(Table table) {
+        public override void AddTable(Table table) {
             Table existingTable = GetTableByName(table.Name);
             if (existingTable == null) {
                 this.Tables.Add(table);
             }
         }
         //senichkin
-        public void RemoveTable(Table table)
-        {
+        public override void RemoveTable(Table table) {
             this.Tables.Remove(table);
             table.Dispose();
         }
-        public void RemoveSeries(Series series)
-        {
+        public override void RemoveSeries(Series series) {
             this.Series.Remove(series);
             series.Dispose();
 
         }
-        public void RemoveOperation(Operation operation)
-        {
+        public void RemoveOperation(Operation operation) {
             this.project.Remove(operation);
         }
 
         private Dictionary<IPluginSettings, string> seriesMap = new Dictionary<IPluginSettings, string>();
         private Dictionary<IPluginSettings, string> tableMap = new Dictionary<IPluginSettings, string>();
-        public Series GetSeriesByName(string seriesName) {
+        public override Series GetSeriesByName(string seriesName) {
             foreach (Series series in Series) {
                 if (series.Name == seriesName) {
                     return series;
@@ -110,7 +103,7 @@ namespace DIPStudioCore {
             return null;
         }
 
-        public Table GetTableByName(string tableName) {
+        public override Table GetTableByName(string tableName) {
             foreach (Table table in Tables) {
                 if (table.Name == tableName) {
                     return table;
@@ -119,31 +112,31 @@ namespace DIPStudioCore {
             return null;
         }
 
-        public Series GetSeriesByNameOrCreateNew(string seriesName) {
+        public override Series GetSeriesByNameOrCreateNew(string seriesName) {
             foreach (Series series in Series) {
                 if (series.Name == seriesName) {
                     return series;
                 }
             }
-            return new Series() { Name = seriesName
+            return new Series() {
+                Name = seriesName
             };
         }
 
-        public Table GetTableByNameOrCreateNew(string tableName, string sourceSeriesName) {
+        public override Table GetTableByNameOrCreateNew(string tableName, string sourceSeriesName) {
             foreach (Table table in Tables) {
                 if (table.Name == tableName) {
                     return table;
                 }
             }
-            return new Table(this.GetSeriesByName(sourceSeriesName)) { Name = tableName
-            };
+            return new Table(this.GetSeriesByName(sourceSeriesName)) { Name = tableName };
         }
 
-        public bool CheckSeriesName(IPluginSettings settings) {
+        public override bool CheckSeriesName(IPluginSettings settings) {
             return CheckName(settings, seriesMap);
         }
 
-        public bool CheckTableName(IPluginSettings settings) {
+        public override bool CheckTableName(IPluginSettings settings) {
             return CheckName(settings, tableMap);
         }
 
@@ -157,13 +150,13 @@ namespace DIPStudioCore {
             return object.ReferenceEquals(settings, existingSettings);
         }
 
-        public List<Series> GetSeriesList() {
+        public override List<Series> GetSeriesList() {
             List<Series> list = new List<Series>();
             list.AddRange(Series);
             return list;
         }
 
-        public List<Table> GetTableList() {
+        public override List<Table> GetTableList() {
             List<Table> list = new List<Table>();
             list.AddRange(Tables);
             return list;
@@ -171,7 +164,8 @@ namespace DIPStudioCore {
 
         public Form MainForm { get; set; }
         public IPlugin GetPluginByKey(string key) {
-            PluginEventArgs args = new PluginEventArgs() { Key = key
+            PluginEventArgs args = new PluginEventArgs() {
+                Key = key
             };
             OnRequestPlugin(args);
             return args.Plugin;
@@ -197,12 +191,9 @@ namespace DIPStudioCore {
 
         public event EventHandler<PluginEventArgs> RequestPlugin;
         public event EventHandler<ProjectModifiedEventArgs> ProjectModified;
-        public bool SetupPlugin(IPlugin plugin, bool modify)
-        {
+        public bool SetupPlugin(IPlugin plugin, bool modify) {
             return plugin.Setup(modify);
         }
-
-        public Rights Rights { get; private set; }
 
         public void SetRights(Rights rights) {
             Rights = rights;
@@ -238,8 +229,7 @@ namespace DIPStudioCore {
             handler(this, EventArgs.Empty);
         }
 
-        public void Reset(bool clearMaps)
-        {
+        public void Reset(bool clearMaps) {
             IsRun = false;
             if (!clearMaps)
                 return;

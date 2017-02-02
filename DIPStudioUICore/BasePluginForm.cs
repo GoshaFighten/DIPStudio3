@@ -11,7 +11,7 @@ using DevExpress.XtraEditors;
 
 namespace DIPStudioUICore {
     public partial class BasePluginForm : BaseForm {
-        protected readonly DIPApplication fApplication;
+        protected readonly DIPApplicationBase fApplication;
         public readonly bool fModify;
         BasePluginUserControl fCtrl;
         public BasePluginForm(BasePluginUserControl ctrl, bool modify)
@@ -43,7 +43,7 @@ namespace DIPStudioUICore {
         }
 
         protected BasePluginForm() {
-            fApplication = DIPApplication.GetInstance();
+            fApplication = DIPApplicationBase.GetInstance();
             InitializeComponent();
         }
         private bool GetEnabled() {

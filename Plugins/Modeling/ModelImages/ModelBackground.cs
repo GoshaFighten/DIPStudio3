@@ -18,7 +18,7 @@ namespace ModelImages {
         public ModelBackground() {
         }
         [NonSerialized]
-        private DIPApplication fApplication = DIPApplication.GetInstance();
+        private DIPApplicationBase fApplication = DIPApplicationBase.GetInstance();
 
         public Series GetVisuals() {
             return fApplication.GetSeriesByName(BackgroundImages);

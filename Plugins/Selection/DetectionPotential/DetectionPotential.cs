@@ -21,7 +21,7 @@ namespace DetectionPotential {
         }
         protected override void Run(int t, int index, int tFinish)
         {
-            DIPApplication app = DIPApplication.GetInstance();
+            DIPApplicationBase app = DIPApplicationBase.GetInstance();
             Table inputTable = app.GetTableByName(this.PluginSettings.InputTable);
             if (inputTable == null) {
                 throw new PluginException(string.Format("Table {0} does not exist", PluginSettings.InputTable));

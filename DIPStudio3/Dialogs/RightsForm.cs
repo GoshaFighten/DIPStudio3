@@ -22,7 +22,7 @@ namespace DIPStudio3 {
             checkEdit1.Text = "User";
             checkEdit2.Text = "Admin";
             layoutControlItem5.Text = "Пароль";
-            Rights = DIPApplication.GetInstance().Rights;
+            Rights = DIPApplicationBase.GetInstance().Rights;
             checkEdit1.Checked = true;
             if (Rights == DIPStudioCore.Rights.Admin)
                 checkEdit2.Checked = true;

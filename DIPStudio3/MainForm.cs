@@ -111,7 +111,7 @@ namespace DIPStudio3 {
             return dockManager1.ActivePanel.ID == dataManager.PanelID;
         }
         private void CreateApplication() {
-            application = DIPApplication.GetInstance();
+            application = DIPApplication.CreateDIPApplication();
             application.MainForm = this;
             application.ProjectModified += new EventHandler<ProjectModifiedEventArgs>(application_ProjectModified);
             application.RightsSet += new EventHandler(application_RightsSet);

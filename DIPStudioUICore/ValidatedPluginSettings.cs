@@ -22,10 +22,10 @@ namespace DIPStudioUICore {
             if(string.IsNullOrWhiteSpace(ResultName)) {
                 info.ErrorText = "Result name is empty";
             }
-            if(IsResultSeries && !DIPApplication.GetInstance().CheckSeriesName(this)) {
+            if(IsResultSeries && !DIPApplicationBase.GetInstance().CheckSeriesName(this)) {
                 info.ErrorText = string.Format("Series with the {0} name already exists!", ResultName);
             }
-            if(!IsResultSeries && !DIPApplication.GetInstance().CheckTableName(this)) {
+            if(!IsResultSeries && !DIPApplicationBase.GetInstance().CheckTableName(this)) {
                 info.ErrorText = string.Format("Table with the {0} name already exists!", ResultName);
             }
         }

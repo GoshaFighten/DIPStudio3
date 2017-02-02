@@ -30,7 +30,7 @@ namespace ModelImages
         /// <param name="t">Текущее время выполнения</param>
         /// <param name="index">Номер текущего цикла</param>
         protected override void Run(int t, int index, int tFinish) {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             int shift = 200;
 
             Series series = application.GetSeriesByNameOrCreateNew(ShortName + PluginSettings.ResultName );

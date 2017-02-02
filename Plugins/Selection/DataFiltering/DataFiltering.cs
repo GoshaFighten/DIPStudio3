@@ -34,7 +34,7 @@ namespace DataFiltering {
 
         public void Logic (int t)
         {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Table dataSource = application.GetTableByName(this.PluginSettings.InputTable);
             if (dataSource == null) {
                 throw new PluginException("no table");
@@ -77,7 +77,7 @@ namespace DataFiltering {
         private ObjectWithProperties GetSourceViewObject(ObjectWithProperties newViewObject, int index)
         {
             ObjectWithProperties sourceViewObject = null;
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             Table dataSource = application.GetTableByName(this.PluginSettings.InputTable);
             if (dataSource[index] != null) {
                 foreach (ObjectWithProperties viewObject in dataSource[index].Objects) {

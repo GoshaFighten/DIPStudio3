@@ -22,7 +22,7 @@ namespace ImageSum {
         }
         private void Draw()
         {
-            DIPApplication application = DIPApplication.GetInstance();
+            DIPApplicationBase application = DIPApplicationBase.GetInstance();
             ImageSumSettings settings = (ImageSumSettings)Settings;
             Series inputSeries1 = application.GetSeriesByName((string)cmbInput1.EditValue);
             if (inputSeries1 == null) {

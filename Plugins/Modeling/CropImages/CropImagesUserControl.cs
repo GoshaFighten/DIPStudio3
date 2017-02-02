@@ -18,7 +18,7 @@ namespace CropImages
             : base(settings)
         {
             InitializeComponent();
-            cmbInput.Properties.Application = DIPApplication.GetInstance();
+            cmbInput.Properties.Application = DIPApplicationBase.GetInstance();
             BindToControl(settings, s => s.InputSeries, cmbInput, c => c.EditValue);
             BindToControl(settings, s => s.X, seX, c => c.EditValue);
             BindToControl(settings, s => s.Y, seY, c => c.EditValue);
