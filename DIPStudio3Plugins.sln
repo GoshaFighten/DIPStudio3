@@ -79,6 +79,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSPluginWrapper", "Plugins\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimInTechDLL", "Plugins\Modeling\LoadImages\SimInTechDLL\SimInTechDIPStudioPlugin.vcxproj", "{C9EA81C0-5E43-4324-BC2B-826873A03BFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimInTechApplication", "SimInTechApplication\SimInTechApplication.csproj", "{6146701C-42A2-4D81-8BD6-C0CF0643D816}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -431,6 +433,18 @@ Global
 		{C9EA81C0-5E43-4324-BC2B-826873A03BFA}.Release|x64.Build.0 = Release|x64
 		{C9EA81C0-5E43-4324-BC2B-826873A03BFA}.Release|x86.ActiveCfg = Release|Win32
 		{C9EA81C0-5E43-4324-BC2B-826873A03BFA}.Release|x86.Build.0 = Release|Win32
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Debug|x64.Build.0 = Debug|Any CPU
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Debug|x86.Build.0 = Debug|Any CPU
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Release|x64.ActiveCfg = Release|Any CPU
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Release|x64.Build.0 = Release|Any CPU
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Release|x86.ActiveCfg = Release|Any CPU
+		{6146701C-42A2-4D81-8BD6-C0CF0643D816}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,20 +4,19 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{36508BF8-AF86-4D86-BB6B-67EF8ACCE1AC}</ProjectGuid>
+    <ProjectGuid>{6146701C-42A2-4D81-8BD6-C0CF0643D816}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSPlugin</RootNamespace>
-    <AssemblyName>LoadImagesWrapper</AssemblyName>
+    <RootNamespace>SimInTechApplication</RootNamespace>
+    <AssemblyName>SimInTechApplication</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\bin\Debug\SimInTech\</OutputPath>
+    <OutputPath>..\bin\Debug\SimInTech\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\..\bin\Release\SimInTech\</OutputPath>
+    <OutputPath>..\bin\Release\SimInTech\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -40,15 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Plugin.cs" />
-    <Compile Include="InputObject.cs" />
-    <Compile Include="OutputObject.cs" />
+    <Compile Include="SimInTechApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\SimInTechApplication\SimInTechApplication.csproj">
-      <Project>{6146701c-42a2-4d81-8bd6-c0cf0643d816}</Project>
-      <Name>SimInTechApplication</Name>
+    <ProjectReference Include="..\DIPStudioCore\DIPStudioCore.csproj">
+      <Project>{cd10cf16-190b-4793-90fb-a4da035e3907}</Project>
+      <Name>DIPStudioCore</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
