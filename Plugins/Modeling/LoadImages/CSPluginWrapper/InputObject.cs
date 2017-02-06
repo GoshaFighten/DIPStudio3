@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CSPlugin {
     public class InputObject {
-        public int Input { get; set; }
-        public int W { get; set; }
+        public string FolderName { get; set; }
+        public int StartTime { get; set; }
+        public int D { get; set; }
+        public int Convert { get; set; }
     }
 }

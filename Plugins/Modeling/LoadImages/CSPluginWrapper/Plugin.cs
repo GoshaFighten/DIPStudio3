@@ -10,7 +10,7 @@ namespace CSPlugin
     {
         public static OutputObject Run(InputObject args) {
             var result = new OutputObject();
-            result.Result = (args.W + 5) * args.Input;
+            result.Result = 10;
             return result;
         }
     }

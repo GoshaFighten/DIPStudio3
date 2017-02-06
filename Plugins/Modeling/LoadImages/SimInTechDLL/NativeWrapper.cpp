@@ -2,6 +2,8 @@
 #include "math.h"
 #using <mscorlib.dll>
 #using <LoadImagesWrapper.dll>
+#include <string> 
+using namespace System;
 
 void NativeWrapper::CallPlugin(
 	int               action,
@@ -36,8 +38,10 @@ void NativeWrapper::CallPlugin(
 	}; break;
 	default: {
 		CSPlugin::InputObject^ args = gcnew CSPlugin::InputObject();
-		args->Input = input_0;
-		args->W = property_w;
+		args->FolderName = gcnew String(std::to_string(property_FolderName).c_str());
+		args->StartTime = property_StartTime;
+		args->D = property_D;
+		args->Convert = property_Convert;
 		CSPlugin::OutputObject^ result = CSPlugin::Plugin::Run(args);
 		state_vars->mydllv2_out_0_ = result->Result;
 	v2___1:
