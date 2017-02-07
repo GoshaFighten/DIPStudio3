@@ -38,7 +38,7 @@ void NativeWrapper::CallPlugin(
 	}; break;
 	default: {
 		CSPlugin::InputObject^ args = gcnew CSPlugin::InputObject();
-		args->FolderName = gcnew String(std::to_string(property_FolderName).c_str());
+		args->FolderName = gcnew String(property_FolderName);
 		args->StartTime = property_StartTime;
 		args->D = property_D;
 		args->Convert = property_Convert;

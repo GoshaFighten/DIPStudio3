@@ -26,9 +26,9 @@ const unsigned int sp_sheme_hash_32 = 1679281830;
 
 /* Main structures defines */
 /* External variables count */
-#define ext_vars_count 5
+#define ext_vars_count 6
 /* Internal state variables count */
-#define state_vars_count 5
+#define state_vars_count 6
 /*  --- Source model preferences --- */
 /* Minimum integration step */
 #define INTEGRATION_MIN_STEP 1E-5
@@ -51,7 +51,8 @@ const unsigned int sp_sheme_hash_32 = 1679281830;
 const int property_FolderName_default = '\0';
 const int property_StartTime_default = 0;
 const int property_D_default = 0;
-const int property_Convert_default = 0;
+const bool property_Convert_default = true;
+const int property_ResultName_default = '\0';
 const double out_0_default = 0;
 const double mydllv0_out_0_default = 0;
 const double mydllv1_out_0_default = 0;
@@ -62,14 +63,16 @@ const ext_var_info_record ext_vars_names[ext_vars_count] = {
 {"property:FolderName",   vt_int,   {1}, 0,dir_input,"", (void*)&property_FolderName_default, sizeof(int)} ,
 {"property:StartTime",   vt_int,   {1}, 1,dir_input,"", (void*)&property_StartTime_default, sizeof(int)} ,
 { "property:D",   vt_int,{ 1 }, 2,dir_input,"", (void*)&property_D_default, sizeof(int) } ,
-{ "property:Convert",   vt_int,{ 1 }, 3,dir_input,"", (void*)&property_Convert_default, sizeof(int) } ,
-{"out:0",   vt_double,   {1}, 4,dir_out,"", (void*)&out_0_default, sizeof(double)}
+{ "property:Convert",   vt_bool,{ 1 }, 3,dir_input,"", (void*)&property_Convert_default, sizeof(int) } ,
+{ "property:ResultName",   vt_int,{ 1 }, 4,dir_input,"", (void*)&property_ResultName_default, sizeof(int) } ,
+{"out:0",   vt_double,   {1}, 5,dir_out,"", (void*)&out_0_default, sizeof(double)}
 };
-#define property_FolderName (*(int*)(ext_vars_addr[0]))
+#define property_FolderName (char*)(ext_vars_addr[0])
 #define property_StartTime (*(int*)(ext_vars_addr[1]))
 #define property_D (*(int*)(ext_vars_addr[2]))
-#define property_Convert (*(int*)(ext_vars_addr[3]))
-#define out_0 (*(double*)(ext_vars_addr[4]))
+#define property_Convert (*(bool*)(ext_vars_addr[3]))
+#define property_ResultName (char*)(ext_vars_addr[4])
+#define out_0 (*(double*)(ext_vars_addr[5]))
 
 const ext_var_info_record state_vars_names[state_vars_count] = {
 {"mydllv0_out_0",   vt_double,   {1}, 0, dir_inout,"Input pin state variable", (void*)&mydllv0_out_0_default, sizeof(double)} ,

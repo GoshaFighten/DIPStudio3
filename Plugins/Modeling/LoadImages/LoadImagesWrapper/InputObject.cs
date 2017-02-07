@@ -9,6 +9,7 @@ namespace CSPlugin {
         public string FolderName { get; set; }
         public int StartTime { get; set; }
         public int D { get; set; }
-        public int Convert { get; set; }
+        public bool Convert { get; set; }
+        public string ResultName { get; set; }
     }
 }
