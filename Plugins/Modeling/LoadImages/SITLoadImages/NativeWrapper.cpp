@@ -42,8 +42,15 @@ void NativeWrapper::CallPlugin(
 		args->StartTime = property_StartTime;
 		args->D = property_D;
 		args->Convert = property_Convert;
+		args->Time = modeltime;
 		CSPlugin::OutputObject^ result = CSPlugin::Plugin::Run(args);
-		state_vars->mydllv2_out_0_ = result->Result;
+		//state_vars->mydllv2_out_0_ = result->Result;
+		//state_vars->mydllv2_out_0_ = 20;
+		for (size_t i = 0; i < 100; i++)
+		{
+			out_0[i] = result->Data[i];
+		}
+		
 	v2___1:
 		;
 
@@ -53,9 +60,9 @@ void NativeWrapper::CallPlugin(
 		Name=OutPin7
 		Type=¬ыходной контакт s3 */
 
-		if (isfinite(state_vars->mydllv2_out_0_)) {
+		/*if (isfinite(state_vars->mydllv2_out_0_)) {
 			out_0 = state_vars->mydllv2_out_0_;
-		};
+		};*/
 	}; break;
 	};
 }

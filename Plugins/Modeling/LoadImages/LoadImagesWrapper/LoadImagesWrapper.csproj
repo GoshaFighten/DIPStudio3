@@ -47,9 +47,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\DIPStudioCore\DIPStudioCore.csproj">
+      <Project>{CD10CF16-190B-4793-90FB-A4DA035E3907}</Project>
+      <Name>DIPStudioCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\DIPStudioUICore\DIPStudioUICore.csproj">
+      <Project>{cc277b5d-1f50-451d-a231-f9223f65df04}</Project>
+      <Name>DIPStudioUICore</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\SimInTechApplication\SimInTechApplication.csproj">
       <Project>{6146701c-42a2-4d81-8bd6-c0cf0643d816}</Project>
       <Name>SimInTechApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugin\LoadImages.csproj">
+      <Project>{ccff5c17-d868-4185-b550-3db58347b4bb}</Project>
+      <Name>LoadImages</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

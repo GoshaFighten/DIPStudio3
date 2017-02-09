@@ -16,6 +16,15 @@ typedef char g_boolean_type;
 /* Complex data type */
 typedef complex_64 g_complex_type;
 
+const unsigned int imgW = 1920;
+const unsigned int imgH = 1200;
+
+typedef int imgSize[imgW * imgH];
+
+const imgSize img_default = { 0 };
+
+
+
 
 /* Default initialization values */
 
@@ -53,7 +62,6 @@ const int property_StartTime_default = 0;
 const int property_D_default = 0;
 const bool property_Convert_default = true;
 const int property_ResultName_default = '\0';
-const double out_0_default = 0;
 const double mydllv0_out_0_default = 0;
 const double mydllv1_out_0_default = 0;
 const double mydllv2_out_0_default = 0;
@@ -63,16 +71,16 @@ const ext_var_info_record ext_vars_names[ext_vars_count] = {
 {"property:FolderName",   vt_int,   {1}, 0,dir_input,"", (void*)&property_FolderName_default, sizeof(int)} ,
 {"property:StartTime",   vt_int,   {1}, 1,dir_input,"", (void*)&property_StartTime_default, sizeof(int)} ,
 { "property:D",   vt_int,{ 1 }, 2,dir_input,"", (void*)&property_D_default, sizeof(int) } ,
-{ "property:Convert",   vt_bool,{ 1 }, 3,dir_input,"", (void*)&property_Convert_default, sizeof(int) } ,
+{ "property:Convert",   vt_bool,{ 1 }, 3,dir_input,"", (void*)&property_Convert_default, sizeof(bool) } ,
 { "property:ResultName",   vt_int,{ 1 }, 4,dir_input,"", (void*)&property_ResultName_default, sizeof(int) } ,
-{"out:0",   vt_double,   {1}, 5,dir_out,"", (void*)&out_0_default, sizeof(double)}
+{"out:0",   vt_double,   {imgW * imgH}, 5,dir_out,"", (void*)&img_default, sizeof(imgSize)}
 };
 #define property_FolderName (char*)(ext_vars_addr[0])
 #define property_StartTime (*(int*)(ext_vars_addr[1]))
 #define property_D (*(int*)(ext_vars_addr[2]))
 #define property_Convert (*(bool*)(ext_vars_addr[3]))
 #define property_ResultName (char*)(ext_vars_addr[4])
-#define out_0 (*(double*)(ext_vars_addr[5]))
+#define out_0 (*(imgSize*)(ext_vars_addr[5]))
 
 const ext_var_info_record state_vars_names[state_vars_count] = {
 {"mydllv0_out_0",   vt_double,   {1}, 0, dir_inout,"Input pin state variable", (void*)&mydllv0_out_0_default, sizeof(double)} ,

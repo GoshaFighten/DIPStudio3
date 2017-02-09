@@ -8,12 +8,36 @@ using DIPStudioCore.Data;
 namespace SimInTechApplication
 {
     public class SimInTechApplication : DIPApplicationBase {
-        public override void AddSeries(Series resultSeries) {
-            throw new NotImplementedException();
+        private SimInTechApplication() {
+            series = new List<Series>();
+        }
+        public override void AddSeries(Series series) {
+            Series existingSeries = GetSeriesByName(series.Name);
+            if (existingSeries == null) {
+                this.Series.Add(series);
+            }
         }
 
         public override void AddTable(Table resultTable) {
             throw new NotImplementedException();
+        }
+
+        public static SimInTechApplication RequestApplication() {
+            var instance = GetInstance();
+            if (instance == null) {
+                instance = new SimInTechApplication();
+                SetInstance(instance);
+            }
+            return (SimInTechApplication)GetInstance();
+        }
+
+        private IList<Series> series;
+        public IList<Series> Series {
+            get { return series; }
+        }
+
+        public System.Drawing.Bitmap GetImage(string seriesName, int time) {
+            return GetSeriesByName(seriesName)[time].Image;
         }
 
         public override bool CheckSeriesName(IPluginSettings validatedPluginSettings) {
@@ -24,12 +48,22 @@ namespace SimInTechApplication
             throw new NotImplementedException();
         }
 
-        public override Series GetSeriesByName(string inputImages) {
-            throw new NotImplementedException();
+        public override Series GetSeriesByName(string seriesName) {
+            foreach (Series series in Series) {
+                if (series.Name == seriesName) {
+                    return series;
+                }
+            }
+            return null;
         }
 
-        public override Series GetSeriesByNameOrCreateNew(string v) {
-            throw new NotImplementedException();
+        public override Series GetSeriesByNameOrCreateNew(string seriesName) {
+            var series = GetSeriesByName(seriesName);
+            if (series != null)
+                return series;                     
+            return new Series() {
+                Name = seriesName
+            };
         }
 
         public override List<Series> GetSeriesList() {

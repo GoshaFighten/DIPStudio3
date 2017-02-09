@@ -11,5 +11,6 @@ namespace CSPlugin {
         public int D { get; set; }
         public bool Convert { get; set; }
         public string ResultName { get; set; }
+        public int Time { get; set; }
     }
 }
