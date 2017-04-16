@@ -46,11 +46,12 @@ void NativeWrapper::CallPlugin(
 		CSPlugin::OutputObject^ result = CSPlugin::Plugin::Run(args);
 		//state_vars->mydllv2_out_0_ = result->Result;
 		//state_vars->mydllv2_out_0_ = 20;
-		for (size_t i = 0; i < 100; i++)
+		double temp[imgW*imgH];
+		for (size_t i = 0; i < imgW * imgH; i++)
 		{
 			out_0[i] = result->Data[i];
 		}
-		
+
 	v2___1:
 		;
 

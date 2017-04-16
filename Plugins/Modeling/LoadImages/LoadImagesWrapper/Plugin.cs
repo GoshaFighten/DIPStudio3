@@ -28,7 +28,7 @@ namespace CSPlugin
             result.Data = new int[result.Size.Width * result.Size.Height];
             for (int i = 0; i < result.Size.Height; i++) {
                 for (int j = 0; j < result.Size.Width; j++) {
-                    result.Data[i * result.Size.Width + j] = img.GetPixel(j, i).R;
+                    result.Data[i * result.Size.Width + j] = img.GetPixel(j, i).ToArgb();
                 }
             }
             return result;

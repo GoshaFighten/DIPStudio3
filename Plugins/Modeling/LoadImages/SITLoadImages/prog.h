@@ -16,10 +16,10 @@ typedef char g_boolean_type;
 /* Complex data type */
 typedef complex_64 g_complex_type;
 
-const unsigned int imgW = 1920;
-const unsigned int imgH = 1200;
+const unsigned int imgW = 1280;
+const unsigned int imgH = 1024;
 
-typedef int imgSize[imgW * imgH];
+typedef double imgSize[imgW * imgH];
 
 const imgSize img_default = { 0 };
 
@@ -35,7 +35,7 @@ const unsigned int sp_sheme_hash_32 = 1679281830;
 
 /* Main structures defines */
 /* External variables count */
-#define ext_vars_count 6
+#define ext_vars_count 8
 /* Internal state variables count */
 #define state_vars_count 6
 /*  --- Source model preferences --- */
@@ -73,7 +73,9 @@ const ext_var_info_record ext_vars_names[ext_vars_count] = {
 { "property:D",   vt_int,{ 1 }, 2,dir_input,"", (void*)&property_D_default, sizeof(int) } ,
 { "property:Convert",   vt_bool,{ 1 }, 3,dir_input,"", (void*)&property_Convert_default, sizeof(bool) } ,
 { "property:ResultName",   vt_int,{ 1 }, 4,dir_input,"", (void*)&property_ResultName_default, sizeof(int) } ,
-{"out:0",   vt_double,   {imgW * imgH}, 5,dir_out,"", (void*)&img_default, sizeof(imgSize)}
+{ "out:0",   vt_double,   {imgW * imgH}, 5,dir_out,"", (void*)&img_default, sizeof(imgSize)},
+{ "out:1", vt_int,{ 1 }, 1,dir_out,"", (void*)&imgW, sizeof(int) } ,
+{ "out:2", vt_int,{ 1 }, 2,dir_out,"", (void*)&imgH, sizeof(int) }
 };
 #define property_FolderName (char*)(ext_vars_addr[0])
 #define property_StartTime (*(int*)(ext_vars_addr[1]))
@@ -81,6 +83,8 @@ const ext_var_info_record ext_vars_names[ext_vars_count] = {
 #define property_Convert (*(bool*)(ext_vars_addr[3]))
 #define property_ResultName (char*)(ext_vars_addr[4])
 #define out_0 (*(imgSize*)(ext_vars_addr[5]))
+#define out_1 (*(int*)(ext_vars_addr[6]))
+#define out_2 (*(int*)(ext_vars_addr[7]))
 
 const ext_var_info_record state_vars_names[state_vars_count] = {
 {"mydllv0_out_0",   vt_double,   {1}, 0, dir_inout,"Input pin state variable", (void*)&mydllv0_out_0_default, sizeof(double)} ,
