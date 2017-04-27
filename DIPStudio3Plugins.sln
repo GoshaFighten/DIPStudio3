@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIPStudio3", "DIPStudio3\DIPStudio3.csproj", "{3B23347D-E5E2-4C15-A505-21D9B8CD042D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIPStudioCore", "DIPStudioCore\DIPStudioCore.csproj", "{CD10CF16-190B-4793-90FB-A4DA035E3907}"
@@ -78,6 +80,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadImagesWrapper", "Plugins\Modeling\LoadImages\LoadImagesWrapper\LoadImagesWrapper.csproj", "{36508BF8-AF86-4D86-BB6B-67EF8ACCE1AC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SITLoadImages", "Plugins\Modeling\LoadImages\SITLoadImages\SimInTechDIPStudioPlugin.vcxproj", "{C9EA81C0-5E43-4324-BC2B-826873A03BFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadData", "Plugins\Modeling\LoadData\LoadData.csproj", "{EA646170-F968-4A88-8C29-32EEFDE9F57B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -443,6 +447,18 @@ Global
 		{C9EA81C0-5E43-4324-BC2B-826873A03BFA}.Release|x64.Build.0 = Release|x64
 		{C9EA81C0-5E43-4324-BC2B-826873A03BFA}.Release|x86.ActiveCfg = Release|Win32
 		{C9EA81C0-5E43-4324-BC2B-826873A03BFA}.Release|x86.Build.0 = Release|Win32
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Debug|x64.Build.0 = Debug|Any CPU
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Debug|x86.Build.0 = Debug|Any CPU
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Release|x64.ActiveCfg = Release|Any CPU
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Release|x64.Build.0 = Release|Any CPU
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Release|x86.ActiveCfg = Release|Any CPU
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -480,5 +496,6 @@ Global
 		{CCFF5C17-D868-4185-B550-3DB58347B4BB} = {466A7FAB-B5C9-4284-ADE3-9ADE5F9EEC11}
 		{36508BF8-AF86-4D86-BB6B-67EF8ACCE1AC} = {466A7FAB-B5C9-4284-ADE3-9ADE5F9EEC11}
 		{C9EA81C0-5E43-4324-BC2B-826873A03BFA} = {466A7FAB-B5C9-4284-ADE3-9ADE5F9EEC11}
+		{EA646170-F968-4A88-8C29-32EEFDE9F57B} = {6FE808AF-6C42-4B94-B14A-8E5CDAE3F469}
 	EndGlobalSection
 EndGlobal
